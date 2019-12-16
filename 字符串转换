@@ -1,0 +1,11 @@
+string转CString:
+    string str = "hello world";
+    CString cstr(str.c_str());
+
+CString转string:
+    CString theCStr = L"Hello C++";
+    string str = CW2A(theCStr.GetString());
+
+string转const char *:
+    string str;
+    char * p = str.c_str();
