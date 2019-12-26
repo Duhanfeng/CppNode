@@ -1,0 +1,11 @@
+1. 安装 fcitx
+sudo apt-get install fcitx
+sudo apt-get install fcitx-table
+
+2. 下载 sogoupinyin_*.deb
+
+3. 将 "键盘输入法系统" 设置为 "fcitx"
+
+4. 在fcitx的设置中添加搜狗输入法
+
+备注: 在unbuntu18.04中, 第四步并没有搜狗输入法, 直到将系统语言设置为中文..
