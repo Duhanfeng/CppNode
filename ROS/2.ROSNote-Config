@@ -1,0 +1,24 @@
+
+查看环境变量:
+export | grep ROS
+
+配置脚本文件:
+source /opt/ros/<distro>/setup.bash     distro: 对应ros版本,如:
+source /opt/ros/kinetic/setup.bash
+
+创建ROS工作空间:
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+
+配置环境:
+source devel/setup.bash
+
+将工作空间添加进环境变量:
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/catkin_ws/src
+echo $ROS_PACKAGE_PATH
+/home/<youruser>/catkin_ws/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks
+
+catkin_make: catkin工作空间下的工具,类似于cmake/make
+

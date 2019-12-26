@@ -1,0 +1,16 @@
+
+catkin 程序包:
+必须包含CMakeLists.txt(catkin版本)和package.xml文件;
+
+创建catkin程序包:
+catkin_create_pkg <package_name> [depend1] [depend2] [depend3]
+
+cd ~/catkin_ws/src
+catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+
+编译catkin程序包:
+source /opt/ros/groovy/setup.bash
+catkin_make
+
+编译指令:
+catkin_make [make_targets] [-DCMAKE_VARIABLES=...]

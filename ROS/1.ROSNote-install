@@ -1,0 +1,39 @@
+
+文档: 
+http://wiki.ros.org/cn
+http://wiki.ros.org/cn/ROS/Tutorials
+http://wiki.ros.org/cn/kinetic/Installation/Ubuntu
+
+添加 sources.list:
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+添加 keys:
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+(如果遇到连接到keyserver的问题，可以在以上命令尝试替换hkp://pgp.mit.edu:80或hkp://keyserver.ubuntu.com:80)
+
+安装:
+sudo apt-get update
+sudo apt-get install ros-<distro>-desktop-full      distro: 对应ros版本,下同:
+sudo apt-get install ros-kinetic-desktop-full
+
+初始化 rosdep:
+sudo rosdep init
+rosdep update
+(由于网络原因,指令可能会报错,多试几次可以解决)
+
+环境配置:
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+构建工厂依赖:
+sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential
+
+安装轻量级模拟器:
+sudo apt-get install ros-<distro>-ros-tutorials
+
+测试是否安装成功:
+roscore
+rosrun turtlesim turtlesim_node
+rosrun turtlesim turtle_teleop_key
+rosrun rqt_graph rqt_graph
+(每一行都需要一个独立的终端)

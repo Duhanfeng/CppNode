@@ -1,0 +1,22 @@
+
+查找包: rospack find
+rospack find [包名称]
+示例: rospack find roscpp
+
+查询依赖: rospack depends1
+rospack depends1 [包名称]
+rospack depends1 beginner_tutorials
+rospack depends [包名称]    (递归查找所有涉及到的包)
+rospack depends beginner_tutorials
+
+切换工作目录: roscd
+roscd [本地包名称[/子目录]]
+示例: roscd roscpp
+
+罗列内容: rosls
+rosls [本地包名称[/子目录]]
+示例: rosls roscpp_tutorials
+
+rospack = ros + pack(age)
+roscd = ros + cd
+rosls = ros + ls
