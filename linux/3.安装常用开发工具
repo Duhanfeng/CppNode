@@ -7,8 +7,11 @@ sudo apt-get install cmake
 3. gcc
 sudo apt-get install gcc
 
-3. g++
+4. g++
 sudo apt-get install g++
 
-3. git
+5. git
 sudo apt-get install git
+
+6. tree
+sudo apt-get install tree

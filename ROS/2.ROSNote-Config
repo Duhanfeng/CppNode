@@ -6,19 +6,43 @@ export | grep ROS
 source /opt/ros/<distro>/setup.bash     distro: 对应ros版本,如:
 source /opt/ros/kinetic/setup.bash
 
-创建ROS工作空间:
+创建ROS catkin工作空间:
 mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
 cd ~/catkin_ws/
+
+编译:
 catkin_make
 
-配置环境:
+配置环境(编译完要source刷新环境):
 source devel/setup.bash
 
 将工作空间添加进环境变量:
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/catkin_ws/src
-echo $ROS_PACKAGE_PATH
-/home/<youruser>/catkin_ws/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+#export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/catkin_ws/src
+#echo $ROS_PACKAGE_PATH
+#/home/<youruser>/catkin_ws/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks
 
-catkin_make: catkin工作空间下的工具,类似于cmake/make
+catkin_make: catkin工作空间下的工具,用于初始化工作空间以及完成相关编译工作,类似于cmake/make
+注意: 编译时,要在catkin workspace中进行(catkin_ws),同时编译完要source刷新环境;
 
+
+catkin工作空间(catkin workspace)目录架构:
+catkin_ws:
+    build:                          #存放目标文件,包括头文件/动态链接库/静态链接库/可执行文件等
+
+    devel:                          #存放cmake&catkin缓存和中间文件
+
+    src:                            #存放package源代码
+
+        packege1:                   #package(catkin编译的基本单元)
+            CMakeLists.txt          #camke文件(必须要有)
+            packege.xml             #信息文件(必须要有)
+            scripts                 #放可执行脚本(python和shell脚本)
+            msg                     #消息(自定义msg通信)目录
+            srv                     #服务(自定义srv通信)目录
+            include                 #头文件目录
+            src                     #源码目录
+            launch                  #launch文件目录
+
+        packege2:
+        ....

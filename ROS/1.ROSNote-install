@@ -4,6 +4,11 @@ http://wiki.ros.org/cn
 http://wiki.ros.org/cn/ROS/Tutorials
 http://wiki.ros.org/cn/kinetic/Installation/Ubuntu
 
+概念:
+catkin: ros构建的编译/构建系统,用于编译ros程序;
+catkin工作空间: 管理和组织ros工程/ros代码的地方,工程的创建/克隆/修改等操作都在这个文件夹里面完成;
+
+
 添加 sources.list:
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 

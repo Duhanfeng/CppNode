@@ -1,0 +1,22 @@
+
+<distro>: 
+    对于16.04,为 kinetic;
+    对于18.04,为 melodic;
+    
+1. 安装:
+    sudo apt-get install ros-<distro>-ur-gazebo
+    sudo apt-get install ros-<distro>-ur5-moveit-config
+    sudo apt-get install ros-<distro>-ur-kinematics
+    sudo apt-get install ros-<distro>-franka-description
+    sudo apt-get install ros-<distro>-moveit-full
+    sudo apt-get install ros-<distro>-moveit-full-pr2
+    注: kinetic里是:
+        sudo apt-get install ros-<distro>-moveit
+        sudo apt-get install ros-<distro>-moveit-pr2
+
+
+2. 打开配置助手进行配置:
+    roslaunch moveit_setup_assistant setup_assistant.launch
+    参考:http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/setup_assistant/setup_assistant_tutorial.html
+
+
