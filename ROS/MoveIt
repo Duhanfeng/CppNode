@@ -22,6 +22,11 @@
 
 topic:
     /move_group/status: 显示当前的状态以及文本描述
+        Type: actionlib_msgs/GoalStatusArray
+
     /move_group/result : 显示轨迹规划过程中的点位变化(重要)
+        Type: moveit_msgs/MoveGroupActionResult
+
     /joint_states : 显示当前轴的状态
+        Type: sensor_msgs/JointState
     
