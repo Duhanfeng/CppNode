@@ -1,9 +1,4 @@
 
-
-rostopic： 话题
-    rostopic list： 列出所有的话题
-
-
 编译程序:
 catkin_make
 
@@ -43,27 +38,6 @@ rostopic hz [topic]
 显示图形界面：
 rosrun rqt_plot rqt_plot
 
-
-ROS 服务(services):
-    服务是节点间的另一种通信方式.服务允许节点发送请求(request)并获得一个响应(response);
-
-    rosservice list         输出可用服务的信息
-    rosservice call         调用带参数的服务
-    rosservice type         输出服务类型
-    rosservice find         依据类型寻找服务find services by service type
-    rosservice uri          输出服务的ROSRPC uri
-
-
-ROS 参数:
-    rosparam使我们能够操纵ROS参数服务器(Parameter Server)上的数据:
-
-    rosparam set            设置参数
-    rosparam get            获取参数
-    rosparam load           从文件读取参数
-    rosparam dump           向文件中写入参数
-    rosparam delete         删除参数
-    rosparam list           列出参数名
-
 启动文件(launch文件):
     方便启动ROSMaster节点管理器以及多个节点的配置文件,并可以实现对每一个节点的配置;
     
@@ -88,10 +62,3 @@ ROS 参数:
 
     启动launch文件:
     roslaunch beginner_tutorials turtlemimic.launch
-
-ROS消息(msg)和ROS服务(srv):
-    消息(msg): msg文件就是一个描述ROS中所使用消息类型的简单文本,被用来生成不同语言的源代码;
-    服务(srv): 一个srv文件描述一项服务.它包含两个部分: 请求和响应;
-
-
-    

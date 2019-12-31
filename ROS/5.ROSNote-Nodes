@@ -3,13 +3,14 @@
     Nodes: 节点,一个节点为一个可执行文件,它可以通过ROS与其他节点进行通信;
     Messages: 消息,消息为一种ROS数据类型,用于订阅或者发布一个话题;
     Topics: 话题,节点可以发布消息到话题,也可以订阅话题以接收消息;
-    Master: 几点管理器,ROS名称服务;
+    Master: 节点管理器,ROS名称服务;
     rosout: ROS中相当于stdout/stderr;
-    roscore: 主机+rosout+参数服务器;
+    roscore: 启动 master + rosout + parameter server(参数服务器);
 
 rosnode:
-关于节点的指令
+在ros中,一个node是ros的一个进程,是pkg里面的可执行文件的实例,按照功能划分,需要使用的时候再向master注册;
 
+关于节点的指令
     rosnode ping	test connectivity to node
 	rosnode list	list active nodes
 	rosnode info	print information about node
@@ -24,8 +25,12 @@ rosnode:
 	rosnode kill	终结运行中的节点
 	rosnode cleanup	清除不可用节点的信息
 
-rosrun:
-rosrun [package_name] [node_name]
 
+rosrun:
 运行节点
 
+rosrun [package_name] [node_name]
+
+
+roslaunch: 
+launch文件遵循xml语言规范,用于启动多个需要的node

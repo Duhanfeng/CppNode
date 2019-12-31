@@ -1,0 +1,40 @@
+
+rostopic:
+ROS中异步通信的方式,node之间通过publish(发布)-subscribe(订阅)的机制实现通信;
+
+关于rostopic的指令
+    rostopic bw     display bandwidth used by topic
+    rostopic echo   print messages to screen
+    rostopic hz     display publishing rate of topic
+    rostopic list   print information about active topics
+    rostopic pub    publish data to topic
+    rostopic type   print topic type
+
+    rostopic bw     显示topic所使用的带宽
+    rostopic echo   在屏幕上显示信息
+    rostopic hz     显示topic的发布率
+    rostopic list   打印关于有效topic的信息
+    rostopic pub    发布数据到topic
+    rostopic type   打印topic类型
+
+    rostopic echo [topic]
+
+关键属性:
+ 1) 异步机制;
+ 2) publish-多subscribe
+
+msg:
+    Topic通信的数据格式,定义在*.msg文件中,类似于一个结构体/类,定义了通信之间约定要传递的的数据结构;
+    msg文件必须要放在package/msg/目录下;
+
+msg支持的数据类型:
+    int8, int16, int32, int64 (plus uint*)
+    float32, float64
+    string
+    time, duration
+    other msg files
+    可变长数组 array[] and 固定长度数组 array[C]
+
+常用rosmsg指令:
+    rosmsg show	显示message描述
+	rosmsg list	列出所有的messages

@@ -1,0 +1,29 @@
+参数服务器(ParameterServer):
+存储各种参数的字典,可用命令行,launch文件和node(API)读写;
+
+rosparam:
+操作参数服务器行的数据;
+
+rosparam set	set parameter
+rosparam get	get parameter
+rosparam load	load parameters from file
+rosparam dump	dump parameters to file
+rosparam delete	delete parameter
+rosparam list	list parameter names
+
+rosparam set	设置参数
+rosparam get	获取参数
+rosparam load	从文件中加载参数
+rosparam dump	往文件中写入参数
+rosparam delete	删除参数
+rosparam list	罗列所有的参数名
+
+补充:
+load,dump操作的文件,都需要遵循YAML格式;
+
+YAML demo:
+name: 'Zhangsan'
+age: 20
+gender: 'M'
+score: {Chinese:80, Math:90}
+score_history: {85;80;85;88}

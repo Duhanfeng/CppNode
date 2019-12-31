@@ -10,4 +10,14 @@
     启动配置多个程序:
     roslaunch
 
-    
+
+sudo apt-get install ros-<distro>-rqt
+sudo apt-get install ros-<distro>-rqt-common-plugins
+
+rqt_graph:
+    运行:
+    rosrun rqt_graph rqt_graph
+
+rqt_plot:
+    运行:
+    rosrun rqt_plot rqt_plot
