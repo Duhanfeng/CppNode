@@ -38,3 +38,22 @@ msg支持的数据类型:
 常用rosmsg指令:
     rosmsg show	显示message描述
 	rosmsg list	列出所有的messages
+
+创建msg:
+1. 在package下创建msg目录,并在该目录下创建*.msg文件;
+2. 在package.xml中加入:
+    <build_depend>message_generation</build_depend>
+    <exec_depend>message_runtime</exec_depend>
+3. 在CMakeList.txt中加入:
+    添加依赖:
+        find_package(... message_generation)
+    添加运行时依赖: 
+        catkin_package(... CATKIN_DEPENDS message_runtime)
+    生成消息:
+        add_message_files(FILES *.msg)
+        generate_messages()
+
+生成的msg的头文件在~/catkin_ws/devel/include下;
+
+
+

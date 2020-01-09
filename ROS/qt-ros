@@ -1,0 +1,28 @@
+
+1. 安装依赖
+sudo apt-get install build-essential libgl1-mesa-dev  libevent-pthreads-2.0.5 doxygen xorg-dev
+
+2. 安装QT(略)
+
+3. 
+sudo apt-get install ros-kinetic-qt-create
+sudo apt-get install ros-kinetic-qt-build
+
+安装 ros_qtc_plugin
+sudo add-apt-repository ppa:levi-armstrong/qt-libraries-xenial  
+sudo add-apt-repository ppa:levi-armstrong/ppa  
+sudo apt-get update
+sudo apt-get install qt57creator-plugin-ros
+此时,在update时会报错,删除相关源即可
+cd /etc/apt/sources.list.d
+sudo rm levi-armstrong-ubuntu-qt-libraries-trusty-xenial.list
+sudo rm levi-armstrong-ubuntu-qt-libraries-trusty-xenial.list.save 
+
+修改配置启动器,让Qt启动器选择新版的Qt
+sudo gedit /usr/lib/x86_64-linux-gnu/qt-default/qtchooser/default.conf
+将: 
+    /usr/lib/x86_64-linux-gnu/qt4/bin
+    /usr/lib/x86_64-linux-gnu
+改成:
+    /home/duhanfeng/Qt5.xx/5.xx/gcc_64/bin
+    /home/duhanfeng/Qt5.xx/5.xx/gcc_64/lib
