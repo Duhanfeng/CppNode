@@ -32,6 +32,22 @@ srv:
     rossrv show	显示srv描述
 	rossrv list	列出所有的srv
 
+创建srv:
+1. 在package下创建srv目录,并在该目录下创建*.srv文件;
+2. 在package.xml中加入:
+    <build_depend>message_generation</build_depend>
+    <exec_depend>message_runtime</exec_depend>
+3. 在CMakeList.txt中加入:
+    添加依赖:
+        find_package(... message_generation)
+    添加运行时依赖: 
+        catkin_package(... CATKIN_DEPENDS message_runtime)
+    生成消息:
+        add_service_files(FILES *.srv)
+        generate_messages()
+
+生成的msg的头文件在~/catkin_ws/devel/include下;
+
 
 Topic与Service比较
     通信方式:
