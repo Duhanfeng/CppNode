@@ -17,3 +17,6 @@ git config --global user.name "duhanfeng"
 
 6. tree
 sudo apt-get install tree
+
+7. 安装超级终端
+sudo apt-get install Terminator
