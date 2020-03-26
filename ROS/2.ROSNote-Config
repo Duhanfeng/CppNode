@@ -28,9 +28,9 @@ catkin_make: catkin工作空间下的工具,用于初始化工作空间以及完
 
 catkin工作空间(catkin workspace)目录架构:
 catkin_ws:
-    build:                          #存放目标文件,包括头文件/动态链接库/静态链接库/可执行文件等
+    devel:                          #存放目标文件,包括头文件/动态链接库/静态链接库/可执行文件等
 
-    devel:                          #存放cmake&catkin缓存和中间文件
+    build:                          #存放cmake&catkin缓存和中间文件
 
     src:                            #存放package源代码
 
